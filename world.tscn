@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://bxvq0hjrpxjv"]
+[gd_scene load_steps=3 format=3 uid="uid://bpdg4canc5jt6"]
 
-[node name="world" type="Node"]
+[ext_resource type="PackedScene" uid="uid://dyej7kcghchhi" path="res://level_01.tscn" id="1_kj6r1"]
+[ext_resource type="PackedScene" uid="uid://daa50iynkqq1c" path="res://player.tscn" id="2_k2rda"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Level_01" parent="." instance=ExtResource("1_kj6r1")]
+
+[node name="Player" parent="." instance=ExtResource("2_k2rda")]
+position = Vector2(230, 312)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
