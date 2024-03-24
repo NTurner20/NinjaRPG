@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cnl75ne5ia6cr"]
 
-[ext_resource type="Script" path="res://gui/inventory/inventoryItem.gd" id="1_lmhse"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="1_lmhse"]
 [ext_resource type="Texture2D" uid="uid://ck0270mliplsc" path="res://Assets/Sword/Sprite.png" id="2_0w17c"]
 
 [resource]

@@ -27,3 +27,4 @@ func _on_pause_screen_paused():
 
 func _on_pause_screen_playing():
 	get_tree().paused = false
+

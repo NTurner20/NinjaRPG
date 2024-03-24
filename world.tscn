@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bpdg4canc5jt6"]
+[gd_scene load_steps=22 format=3 uid="uid://bpdg4canc5jt6"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_m6ae5"]
 [ext_resource type="PackedScene" uid="uid://daa50iynkqq1c" path="res://player/player.tscn" id="2_k2rda"]
@@ -11,9 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bgqvhyjxkj0ww" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloorDetail.png" id="7_1l3at"]
 [ext_resource type="Texture2D" uid="uid://c0xdfneiw0c8q" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="8_q38m4"]
 [ext_resource type="Texture2D" uid="uid://dhfipbkpvqjmj" path="res://NinjaAdventure/Backgrounds/Animated/Plant/SpriteSheet16x16.png" id="9_va554"]
-[ext_resource type="Script" path="res://gui/inventory/inventory_gui.gd" id="11_b73js"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="11_gy7ij"]
-[ext_resource type="PackedScene" uid="uid://blmw4toy8m6wb" path="res://gui/inventory/inventory_gui.tscn" id="12_dgaw7"]
+[ext_resource type="PackedScene" uid="uid://blmw4toy8m6wb" path="res://inventory/inventory_gui.tscn" id="12_dgaw7"]
 [ext_resource type="PackedScene" uid="uid://dwhuharwfbcxx" path="res://gui/pause_screen.tscn" id="14_s7v80"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qitpq"]
@@ -5007,6 +5006,17 @@ process_mode = 3
 script = ExtResource("11_gy7ij")
 
 [node name="Inventory_gui" parent="CanvasLayer" instance=ExtResource("12_dgaw7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_chmgk")]
 
@@ -5016,7 +5026,8 @@ offset_left = -45.0
 offset_top = -12.5
 offset_right = 45.0
 offset_bottom = 12.5
-script = ExtResource("11_b73js")
 
 [connection signal="closed" from="CanvasLayer/Inventory_gui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory_gui" to="." method="_on_inventory_gui_opened"]
+[connection signal="paused" from="CanvasLayer/PauseScreen" to="." method="_on_pause_screen_paused"]
+[connection signal="playing" from="CanvasLayer/PauseScreen" to="." method="_on_pause_screen_playing"]

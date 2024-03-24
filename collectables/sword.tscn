@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c71am5kb7i8c3" path="res://collectables/collectable.tscn" id="1_mqlci"]
 [ext_resource type="Script" path="res://collectables/sword.gd" id="2_bq4nt"]
 [ext_resource type="Texture2D" uid="uid://ck0270mliplsc" path="res://Assets/Sword/Sprite.png" id="2_twecb"]
-[ext_resource type="Resource" uid="uid://cnl75ne5ia6cr" path="res://gui/inventory/items/sword.tres" id="3_77qoy"]
+[ext_resource type="Resource" uid="uid://cnl75ne5ia6cr" path="res://inventory/items/sword.tres" id="3_77qoy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0orq"]
 resource_local_to_scene = true

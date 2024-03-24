@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://edpa5foxdvum"]
 
-[ext_resource type="Script" path="res://gui/inventory/inventoryItem.gd" id="1_dcyb1"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="1_dcyb1"]
 [ext_resource type="Texture2D" uid="uid://cl5adf0bgtxp0" path="res://Assets/LifePot.png" id="2_42x6j"]
 
 [resource]

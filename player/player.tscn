@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_2yd74"]
 [ext_resource type="Texture2D" uid="uid://cc1lox4buo4x8" path="res://Assets/GreenNinja/SpriteSheet.png" id="2_icxfi"]
-[ext_resource type="Resource" uid="uid://bebmq6rdtfm1w" path="res://gui/inventory/playerInventory.tres" id="2_odb1u"]
+[ext_resource type="Resource" uid="uid://bebmq6rdtfm1w" path="res://inventory/playerInventory.tres" id="2_odb1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cy10r"]
 size = Vector2(14, 3)

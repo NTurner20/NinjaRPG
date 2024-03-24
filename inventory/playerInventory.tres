@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Inventory" load_steps=4 format=3 uid="uid://bebmq6rdtfm1w"]
 
-[ext_resource type="Resource" uid="uid://edpa5foxdvum" path="res://gui/inventory/items/lifepot.tres" id="1_ee2xd"]
-[ext_resource type="Resource" uid="uid://cnl75ne5ia6cr" path="res://gui/inventory/items/sword.tres" id="2_ojd41"]
-[ext_resource type="Script" path="res://gui/inventory/inventory.gd" id="3_tftps"]
+[ext_resource type="Resource" uid="uid://edpa5foxdvum" path="res://inventory/items/lifepot.tres" id="1_ee2xd"]
+[ext_resource type="Resource" uid="uid://cnl75ne5ia6cr" path="res://inventory/items/sword.tres" id="2_ojd41"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="3_tftps"]
 
 [resource]
 script = ExtResource("3_tftps")
