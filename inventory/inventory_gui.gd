@@ -8,6 +8,7 @@ signal closed
 var isOpen : bool = false
 
 func _ready():
+	inventory.updated.connect(update)
 	update()
 
 func update():

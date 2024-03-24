@@ -2,7 +2,7 @@ extends "res://collectables/collectable.gd"
 
 @onready var animator = $AnimationPlayer
 
-func collect():
+func collect(inventory : Inventory):
 	animator.play("spin")
 	await animator.animation_finished
-	super.collect()
+	super(inventory)

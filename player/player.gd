@@ -73,7 +73,7 @@ func knockback(enemyVelocity : Vector2):
 
 func _on_hurt_box_area_entered(area):
 	if area.has_method("collect"):
-		area.collect()
+		area.collect(inventory)
 
 		
 func _on_hurt_box_area_exited(area):
