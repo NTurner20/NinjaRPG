@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var player_speed = 100
 @export var maxHealth = 3
 @export var knockbackPower : int = 500
+@export var inventory : Inventory
 
 @onready var animator = $AnimationPlayer
 @onready var currentHealth : int = maxHealth
