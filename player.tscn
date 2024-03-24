@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://daa50iynkqq1c"]
+[gd_scene load_steps=26 format=3 uid="uid://daa50iynkqq1c"]
 
 [ext_resource type="Texture2D" uid="uid://cit16iyk7bkmp" path="res://NinjaAdventure/Actor/Characters/GreenNinja/SpriteSheet.png" id="1_c2om1"]
 [ext_resource type="Script" path="res://player.gd" id="1_jf54b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cy10r"]
-size = Vector2(16, 3)
+size = Vector2(14, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll6pd"]
 atlas = ExtResource("1_c2om1")
@@ -189,10 +189,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1uou"]
+radius = 6.0
+height = 14.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_jf54b")
+player_speed = 50
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -205,3 +210,12 @@ animation = &"walk_up"
 frame = 2
 frame_progress = 0.286477
 offset = Vector2(0, -8)
+
+[node name="hurtBox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_h1uou")
+
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]

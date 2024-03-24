@@ -1,6 +1,10 @@
 extends CharacterBody2D
 @export var player_speed = 100
 @onready var animated_sprite = $AnimatedSprite2D
+
+
+@export var maxHealth = 3
+@onready var currentHealth : int = maxHealth
 func _process(delta):
 	var direction = Vector2(
   	 Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -25,3 +29,11 @@ func _process(delta):
 		else:
 			animated_sprite.play("walk_left")
 
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+		
