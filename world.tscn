@@ -1,51 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpdg4canc5jt6"]
+[gd_scene load_steps=6 format=3 uid="uid://bpdg4canc5jt6"]
 
-[ext_resource type="PackedScene" uid="uid://dyej7kcghchhi" path="res://level_01.tscn" id="1_kj6r1"]
-[ext_resource type="PackedScene" uid="uid://daa50iynkqq1c" path="res://player.tscn" id="2_k2rda"]
-[ext_resource type="PackedScene" uid="uid://cx5cvpsacwb24" path="res://slime.tscn" id="3_yjo0r"]
+[ext_resource type="PackedScene" uid="uid://dyej7kcghchhi" path="res://levels/level_01.tscn" id="1_kj6r1"]
+[ext_resource type="Script" path="res://world.gd" id="1_m6ae5"]
+[ext_resource type="PackedScene" uid="uid://daa50iynkqq1c" path="res://player/player.tscn" id="2_k2rda"]
+[ext_resource type="PackedScene" uid="uid://cx5cvpsacwb24" path="res://enemies/slime.tscn" id="3_yjo0r"]
+[ext_resource type="PackedScene" uid="uid://dwubo3qgk3qxv" path="res://gui/hearts_container.tscn" id="4_chmgk"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_m6ae5")
+
+[node name="Player" parent="." instance=ExtResource("2_k2rda")]
+position = Vector2(70, 89)
+maxHealth = 4
+knockbackPower = 600
+metadata/_edit_group_ = true
+
+[node name="followCam" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
 
 [node name="Level_01" parent="." instance=ExtResource("1_kj6r1")]
 
-[node name="Player" parent="." instance=ExtResource("2_k2rda")]
-position = Vector2(-23, 34)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
-
 [node name="Slime" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_yjo0r")]
-position = Vector2(89, 53)
+position = Vector2(292, 93)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Slime"]
 position = Vector2(-53, -30)
 
 [node name="Slime2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_yjo0r")]
-position = Vector2(162, -6)
+position = Vector2(696, 134)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Slime2"]
 position = Vector2(-63, -19)
 
 [node name="Slime3" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_yjo0r")]
-position = Vector2(36, -34)
+position = Vector2(144, 172)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Slime3"]
 position = Vector2(8, 19)
 
 [node name="Slime4" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_yjo0r")]
-position = Vector2(300, -27)
+position = Vector2(698, 241)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Slime4"]
 position = Vector2(-2, 38)
 
 [node name="Slime5" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_yjo0r")]
-position = Vector2(359, 32)
+position = Vector2(436, 138)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Slime5"]
 position = Vector2(52, 10)
+
+[node name="Slime6" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_yjo0r")]
+position = Vector2(394, 290)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Slime6"]
+position = Vector2(2, -46)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_chmgk")]

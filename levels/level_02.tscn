@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5a4e88qivo4q"]
 
-[ext_resource type="Texture2D" uid="uid://prji8pbjekfn" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloor.png" id="1_7weux"]
-[ext_resource type="Texture2D" uid="uid://c0xdfneiw0c8q" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="2_lclk8"]
-[ext_resource type="Texture2D" uid="uid://bgqvhyjxkj0ww" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloorDetail.png" id="3_papac"]
-[ext_resource type="Texture2D" uid="uid://l7xtopbyhg3i" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetNature.png" id="4_bvmqa"]
+[ext_resource type="Texture2D" uid="uid://prji8pbjekfn" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloor.png" id="1_ejm1c"]
+[ext_resource type="Texture2D" uid="uid://c0xdfneiw0c8q" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="2_nq4b8"]
+[ext_resource type="Texture2D" uid="uid://bgqvhyjxkj0ww" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloorDetail.png" id="3_q2hs6"]
+[ext_resource type="Texture2D" uid="uid://l7xtopbyhg3i" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetNature.png" id="4_lv63x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2la8"]
-texture = ExtResource("1_7weux")
+texture = ExtResource("1_ejm1c")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -467,7 +467,7 @@ texture = ExtResource("1_7weux")
 19:25/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7i4d"]
-texture = ExtResource("2_lclk8")
+texture = ExtResource("2_nq4b8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1118,7 +1118,7 @@ texture = ExtResource("2_lclk8")
 31:22/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0opt"]
-texture = ExtResource("3_papac")
+texture = ExtResource("3_q2hs6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1154,7 +1154,7 @@ texture = ExtResource("3_papac")
 7:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7nnb"]
-texture = ExtResource("4_bvmqa")
+texture = ExtResource("4_lv63x")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -1547,8 +1547,23 @@ format = 2
 layer_0/name = "Floor"
 layer_0/tile_data = PackedInt32Array(131080, 0, 1, 131081, 131072, 1, 196617, 131072, 1, 196616, 0, 1, 196615, 65536, 1, 196614, 65536, 1, 196613, 65536, 1, 196612, 65536, 1, 196611, 65536, 1, 196610, 65536, 1, 196609, 65536, 1, -65537, 0, 5, -1, 0, 5, 65535, 0, 5, 131071, 0, 5, 196607, 65536, 1, 262143, 65536, 1, 327679, 65536, 1, 393215, 65536, 1, 458751, 65536, 1, -131072, 0, 5, -65536, 0, 5, 0, 0, 5, 65536, 0, 5, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, -131071, 0, 5, -65535, 0, 5, 1, 0, 5, 65537, 0, 5, 131073, 65536, 1, 262145, 65536, 1, 327681, 65536, 1, 393217, 65536, 1, -131070, 0, 5, -65534, 0, 5, 2, 0, 5, 65538, 0, 5, 131074, 65536, 1, 262146, 65536, 1, 327682, 65536, 1, 393218, 65536, 1, -131069, 0, 5, -65533, 0, 5, 3, 0, 5, 65539, 0, 5, 131075, 65536, 1, 262147, 65536, 1, 327683, 65536, 1, 393219, 65536, 1, -131068, 0, 5, -65532, 0, 5, 4, 0, 5, 65540, 0, 5, 131076, 65536, 1, 262148, 65536, 1, 327684, 65536, 1, 393220, 65536, 1, -131067, 0, 5, -65531, 0, 5, 5, 0, 5, 65541, 0, 5, 131077, 65536, 1, 262149, 65536, 1, 327685, 65536, 1, 393221, 65536, 1, -131066, 0, 5, -65530, 0, 5, 6, 0, 5, 65542, 0, 5, 131078, 65536, 1, 262150, 65536, 1, 327686, 65536, 1, 393222, 65536, 1, -131065, 0, 5, -65529, 0, 5, 7, 0, 5, 65543, 0, 5, 131079, 65536, 1, 262151, 65536, 1, 327687, 65536, 1, 393223, 65536, 1, -131064, 0, 5, -65528, 0, 5, 8, 0, 0, 65544, 0, 1, 262152, 65536, 1, 327688, 65536, 1, 393224, 65536, 1, -131063, 0, 5, -65527, 0, 5, 9, 131072, 0, 65545, 131072, 1, 262153, 65536, 1, 327689, 65536, 1, 393225, 65536, 1, -131062, 0, 5, -65526, 0, 5, 10, 0, 5, 65546, 0, 5, 131082, 0, 5, 196618, 0, 5, 262154, 65536, 1, 327690, 65536, 1, 393226, 65536, 1, -131061, 0, 5, -65525, 0, 5, 11, 0, 5, 65547, 0, 5, 131083, 0, 5, 196619, 0, 5, 262155, 65536, 1, 327691, 65536, 1, 393227, 65536, 1, -131060, 0, 5, -65524, 0, 5, 12, 0, 5, 65548, 0, 5, 131084, 0, 5, 196620, 0, 5, 262156, 65536, 1, 327692, 65536, 1, 393228, 65536, 1, -131059, 0, 5, -65523, 0, 5, 13, 0, 5, 65549, 0, 5, 131085, 0, 5, 196621, 0, 5, 262157, 65536, 1, 327693, 65536, 1, 393229, 65536, 1, -131058, 0, 5, -65522, 0, 5, 14, 0, 5, 65550, 0, 5, 131086, 0, 5, 196622, 0, 5, 262158, 0, 5, 327694, 0, 5, 393230, 65536, 1, -131057, 0, 5, -65521, 0, 5, 15, 0, 5, 65551, 0, 5, 131087, 0, 5, 196623, 0, 5, 262159, 0, 5, 327695, 0, 5, 393231, 65536, 1, -131056, 0, 5, -65520, 0, 5, 16, 0, 5, 65552, 0, 5, 131088, 0, 5, 196624, 0, 5, 262160, 0, 5, 327696, 0, 5, 393232, 65536, 1, -131055, 0, 5, -65519, 0, 5, 17, 0, 5, 65553, 0, 5, 131089, 0, 5, 196625, 0, 5, 262161, 0, 5, 327697, 0, 5, 393233, 65536, 1)
 layer_1/name = "Decorations"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(196615, 458754, 0, 196611, 327682, 0)
 layer_2/name = "Trees"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-65533, 4, 0, -131068, 4, 0, -65531, 4, 0)
 layer_3/name = "Buildings"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 2, 1, 65537, 0, 65537, 65537, 1, 131073, 65537, 2, 2, 131073, 0, 65538, 131073, 1, 131074, 131073, 2, 3, 196609, 0, 65539, 196609, 1, 131075, 196609, 2, 4, 786433, 0, 65540, 786433, 1, 131076, 786433, 2, 5, 851969, 0, 65541, 851969, 1, 131077, 851969, 2, 6, 917505, 0, 65542, 917505, 1, 131078, 917505, 2, 7, 983041, 0, 65543, 983041, 1, 131079, 983041, 2, 65546, 262145, 0, 131082, 262145, 1, 196618, 262145, 2, 131083, 327681, 1, 196619, 327681, 2, 65548, 393217, 0, 131084, 393217, 1, 196620, 393217, 2, 65549, 458753, 0, 131085, 458753, 1, 196621, 458753, 2, 65547, 327681, 0)
