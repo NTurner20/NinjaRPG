@@ -1,13 +1,6 @@
-extends Panel
+extends Resource
 
-@onready var backgroundSprite : Sprite2D = $background
-@onready var itemSprite : Sprite2D = $CenterContainer/Panel/item
+class_name InventorySlot
 
-func update(item: InventoryItem):
-	if !item:
-		backgroundSprite.frame = 0
-		itemSprite.visible = false
-	else:
-		backgroundSprite.frame = 1
-		itemSprite.visible = true
-		itemSprite.texture = item.texture
+@export var item : InventoryItem
+@export var amount : int

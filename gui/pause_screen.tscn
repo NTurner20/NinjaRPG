@@ -1,26 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwhuharwfbcxx"]
+[gd_scene load_steps=3 format=3 uid="uid://dwhuharwfbcxx"]
 
 [ext_resource type="Script" path="res://gui/pause_screen.gd" id="1_lfvi1"]
+[ext_resource type="FontFile" uid="uid://bdjgptj0rjvts" path="res://Assets/NormalFont.ttf" id="2_nn8kk"]
 
 [node name="PauseScreen" type="Control"]
-custom_minimum_size = Vector2(90, 25)
+custom_minimum_size = Vector2(128, 25)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -119.0
-offset_top = -67.5
-offset_right = -29.0
-offset_bottom = -42.5
+offset_left = -64.0
+offset_top = -12.5
+offset_right = 64.0
+offset_bottom = 12.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lfvi1")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 95.0
-offset_bottom = 23.0
+offset_right = 128.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nn8kk")
 text = "-- PAUSED --"
-fit_content = true

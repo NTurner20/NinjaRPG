@@ -10,36 +10,52 @@ extends CharacterBody2D
 @onready var effects = $Effects
 @onready var hurtBox = $hurtBox
 @onready var hurtTimer = $hurtTimer
+@onready var weapon = $weapon
 
 var isHurt : bool = false
-
+var lastAnimDirection : String = "down"
+var isAttacking : bool = false
 
 signal healthChanged
 
 func _ready():
 	effects.play("RESET")
+	weapon.disable()
 	
 func handleInput():
 	var direction = Vector2(
   	 Input.get_action_strength("right") - Input.get_action_strength("left"),
   	 Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
-	direction = direction.normalized()
-
 	velocity = direction * player_speed
+	direction = direction.normalized()
+	if Input.is_action_just_pressed("attack"):
+		attack()
+	
+func attack():
+	weapon.enable()
+	animator.play("attack_"+lastAnimDirection)
+	isAttacking = true
+	await animator.animation_finished
+	weapon.disable()
+	isAttacking = false
+	
+
+	
 func updateAnimation():
 	# Update animation or other character states here
+	if isAttacking: return
 	if velocity == Vector2.ZERO:
 		animator.stop()
 	else:
-		if velocity.y > 0:
-			animator.play("walk_down")
-		elif velocity.x > 0:
-			animator.play("walk_right")
-		elif velocity.y < 0:
-			animator.play("walk_up")
-		else:
-			animator.play("walk_left")
+		var direction = "down"
+		if velocity.y > 0: direction = "down"
+		elif velocity.x > 0: direction = "right"
+		elif velocity.y < 0: direction = "up"
+		else: direction = "left"
+		animator.play("walk_"+direction)
+		lastAnimDirection = direction
+			
 
 func _physics_process(_delta):
 	handleInput()

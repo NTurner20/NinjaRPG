@@ -4,10 +4,12 @@ extends CharacterBody2D
 @export var limit = 0.5
 @export var endPoint : Marker2D
 @onready var animator = $AnimationPlayer
+@onready var deathSound = $deathSound
+
 
 var startPosition
 var endPosition
-
+var isDead : bool = false
 func _ready():
 	startPosition  = position
 	endPosition = endPoint.global_position
@@ -41,6 +43,17 @@ func updateVelocity():
 	velocity = moveDirection.normalized()*speed
 	
 func _physics_process(delta):
+	if isDead : return
 	updateVelocity()
 	updateAnimation()
 	move_and_slide()
+
+
+func _on_hurt_box_area_entered(area):
+	if area == $hitBox: return
+	$hitBox.set_deferred("monitorable", false)
+	isDead = true
+	deathSound.play()
+	animator.play("death")
+	await animator.animation_finished
+	queue_free()
