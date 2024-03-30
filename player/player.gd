@@ -20,7 +20,7 @@ signal healthChanged
 
 func _ready():
 	effects.play("RESET")
-	weapon.disable()
+	$weapon.disable()
 	
 func handleInput():
 	var direction = Vector2(

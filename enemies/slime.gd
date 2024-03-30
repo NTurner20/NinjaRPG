@@ -53,7 +53,8 @@ func _on_hurt_box_area_entered(area):
 	if area == $hitBox: return
 	$hitBox.set_deferred("monitorable", false)
 	isDead = true
-	deathSound.play()
+	
 	animator.play("death")
 	await animator.animation_finished
+	deathSound.play()
 	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpdg4canc5jt6"]
+[gd_scene load_steps=23 format=3 uid="uid://bpdg4canc5jt6"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_m6ae5"]
 [ext_resource type="PackedScene" uid="uid://daa50iynkqq1c" path="res://player/player.tscn" id="2_k2rda"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="11_gy7ij"]
 [ext_resource type="PackedScene" uid="uid://blmw4toy8m6wb" path="res://inventory/inventory_gui.tscn" id="12_dgaw7"]
 [ext_resource type="PackedScene" uid="uid://dwhuharwfbcxx" path="res://gui/pause_screen.tscn" id="14_s7v80"]
+[ext_resource type="AudioStream" uid="uid://v2skhn8c5osw" path="res://NinjaAdventure/Musics/11 - Clearing.ogg" id="15_sqg4l"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qitpq"]
 resource_name = "Collectables"
@@ -4995,6 +4996,9 @@ sources/0 = SubResource("TileSetScenesCollectionSource_qitpq")
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_m6ae5")
+
+[node name="BG_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_sqg4l")
 
 [node name="Player" parent="." instance=ExtResource("2_k2rda")]
 position = Vector2(126, 85)
