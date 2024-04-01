@@ -55,6 +55,7 @@ func _on_hurt_box_area_entered(area):
 	isDead = true
 	
 	animator.play("death")
-	await animator.animation_finished
 	deathSound.play()
+	await animator.animation_finished
+
 	queue_free()

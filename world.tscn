@@ -4998,6 +4998,7 @@ y_sort_enabled = true
 script = ExtResource("1_m6ae5")
 
 [node name="BG_Music" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("15_sqg4l")
 
 [node name="Player" parent="." instance=ExtResource("2_k2rda")]
@@ -5120,6 +5121,9 @@ grow_vertical = 2
 process_mode = 3
 offset_left = -45.0
 offset_right = 45.0
+
+[node name="soundFX" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [connection signal="closed" from="CanvasLayer/Inventory_gui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory_gui" to="." method="_on_inventory_gui_opened"]

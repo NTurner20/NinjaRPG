@@ -3,6 +3,7 @@ extends Node2D
 @onready var heartsContainer = $CanvasLayer/heartsContainer
 @onready var player = $Player
 @onready var bgMusic : AudioStreamPlayer2D = $BG_Music
+@onready var soundFX : AudioStreamPlayer = $soundFX
 
 var musicPos = 0.0
 # Called when the node enters the scene tree for the first time.
@@ -21,21 +22,22 @@ func _process(delta):
 
 func _on_inventory_gui_closed():
 	get_tree().paused = false
-	$BG_Music.play(musicPos)
+	#$BG_Music.play(musicPos)
+	$BG_Music.volume_db = 0
 
 func _on_inventory_gui_opened():
 	get_tree().paused = true
-	musicPos = $BG_Music.get_playback_position()
-	$BG_Music.stop()
+	$BG_Music.volume_db = -15
+	#musicPos = $BG_Music.get_playback_position()
+	#$BG_Music.stop()
 
 func _on_pause_screen_paused():
 	get_tree().paused = true
-	musicPos = $BG_Music.get_playback_position()
-	$BG_Music.stop()
+	$BG_Music.volume_db = -15
 
 
 
 func _on_pause_screen_playing():
 	get_tree().paused = false
-	$BG_Music.play(musicPos)
+	$BG_Music.volume_db = 0
 

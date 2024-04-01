@@ -11,6 +11,9 @@ extends CharacterBody2D
 @onready var hurtBox = $hurtBox
 @onready var hurtTimer = $hurtTimer
 @onready var weapon = $weapon
+@onready var soundFX : AudioStreamPlayer = $"../soundFX"
+@onready var hurtSound = preload("res://Assets/Sounds/Hit.wav")
+@onready var pickupSoundHealthPot = preload("res://NinjaAdventure/Sounds/Game/Gold1.wav")
 
 var isHurt : bool = false
 var lastAnimDirection : String = "down"
@@ -20,7 +23,7 @@ signal healthChanged
 
 func _ready():
 	effects.play("RESET")
-	$weapon.disable()
+	weapon.disable()
 	
 func handleInput():
 	var direction = Vector2(
@@ -71,7 +74,8 @@ func hurtByEnemy(area):
 	currentHealth -= 1
 	if currentHealth < 0:
 		currentHealth = maxHealth
-		
+	soundFX.stream = hurtSound
+	soundFX.play()
 	healthChanged.emit(currentHealth)
 	isHurt = true
 	knockback(area.get_parent().velocity)
