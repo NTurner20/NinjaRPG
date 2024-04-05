@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bpdg4canc5jt6"]
+[gd_scene load_steps=24 format=3 uid="uid://bpdg4canc5jt6"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_m6ae5"]
 [ext_resource type="PackedScene" uid="uid://daa50iynkqq1c" path="res://player/player.tscn" id="2_k2rda"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://blmw4toy8m6wb" path="res://inventory/inventory_gui.tscn" id="12_dgaw7"]
 [ext_resource type="PackedScene" uid="uid://dwhuharwfbcxx" path="res://gui/pause_screen.tscn" id="14_s7v80"]
 [ext_resource type="AudioStream" uid="uid://v2skhn8c5osw" path="res://NinjaAdventure/Musics/11 - Clearing.ogg" id="15_sqg4l"]
+[ext_resource type="PackedScene" uid="uid://dgiihb3k0raxb" path="res://gui/coins.tscn" id="16_e12sd"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qitpq"]
 resource_name = "Collectables"
@@ -4997,7 +4998,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_qitpq")
 y_sort_enabled = true
 script = ExtResource("1_m6ae5")
 
-[node name="BG_Music" type="AudioStreamPlayer2D" parent="."]
+[node name="BG_Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("15_sqg4l")
 
@@ -5121,6 +5122,8 @@ grow_vertical = 2
 process_mode = 3
 offset_left = -45.0
 offset_right = 45.0
+
+[node name="Coins" parent="CanvasLayer" instance=ExtResource("16_e12sd")]
 
 [node name="soundFX" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
