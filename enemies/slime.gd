@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var endPoint : Marker2D
 @onready var animator = $AnimationPlayer
 @onready var deathSound = $deathSound
+@onready var coin = preload("res://coin.tscn")
 
 
 var startPosition
@@ -53,9 +54,13 @@ func _on_hurt_box_area_entered(area):
 	if area == $hitBox: return
 	$hitBox.set_deferred("monitorable", false)
 	isDead = true
-	
+	var coin_ins = coin.instantiate()
+	get_parent().add_child(coin_ins)
+	coin_ins.position = self.get_position()
+	coin_ins.get_child(2).play("spin")
 	animator.play("death")
 	deathSound.play()
 	await animator.animation_finished
+	
 
 	queue_free()
